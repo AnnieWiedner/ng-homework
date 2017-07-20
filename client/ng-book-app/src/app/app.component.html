@@ -1,0 +1,21 @@
+<div>
+  <h2>Post Form</h2>
+  <input [(ngModel)]="newBook.title" placeholder="Title"/>
+  <input [(ngModel)]="newBook.author" placeholder="Author"/>
+  <input [(ngModel)]="newBook.genre" placeholder="Genre"/>
+  <input [(ngModel)]="newBook.front_cover_img" placeholder="Image URL"/>
+  <button (click)="postBook()">Submit</button>
+  <h2>Patch Form</h2>
+  <input [(ngModel)]="currentBook.title" placeholder="Title"/>
+  <input [(ngModel)]="currentBook.author" placeholder="Author"/>
+  <input [(ngModel)]="currentBook.genre" placeholder="Genre"/>
+  <input [(ngModel)]="currentBook.front_cover_img" placeholder="Image URL"/>
+  <button (click)="patchBook()">Submit</button>
+  <ul>
+    <li *ngFor="let book of books">
+      {{book.id}} {{book.title}} {{book.author}} {{book.genre}} {{book.front_cover_img}}
+      <button (click)="editBook(book)">Edit</button>
+      <button (click)="destroyBook(book)">Delete</button>
+    </li>
+  </ul>
+</div>
